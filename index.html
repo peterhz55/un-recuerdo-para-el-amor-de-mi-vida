@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Un pedacito de mi corazón para ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="h" viewBox="0 0 32 30"><path d="M16 28C6 20 1 14.500 1 9a7 7 0 0 1 13-3.500L16 8l2-2.500A7 7 0 0 1 31 9c0 5.500-5 11-15 19z"/></symbol>
+</svg>
+
+<!-- BIENVENIDA -->
+<section id="bienvenida" class="bienvenida">
+  <svg class="latido" aria-hidden="true"><use href="#h"/></svg>
+  <h1>Algo pequeñito que guarda un sentimiento enorme por vos</h1>
+  <p>Preparé un pequeño detalle con todo el amor que te tengo..</p>
+  <button id="abrir" class="boton">Una pequeña sorpresa para vos ♥</button>
+</section>
+
+<!-- PÁGINA PRINCIPAL -->
+<div id="flotantes" class="flotantes" aria-hidden="true"></div>
+
+<main id="principal" class="principal" hidden>
+
+  <header class="hero">
+    <h2>Si pudiera detener el tiempo, elegiría más de un instante con vos.</h2>
+    <p>Hice esto pensando en vos. No tiene ningún motivo especial: solo quería que tuvieras algo que te recordara, cada vez que lo abras, lo mucho que significas para mí.</p>
+    <a href="#recuerdos" class="bajar">Tengo un par de recuerdos guardados para vos<span aria-hidden="true">♥</span></a>
+  </header>
+
+  <section id="recuerdos" class="recuerdos" aria-labelledby="t-recuerdos">
+    <h2 id="t-recuerdos">Ocho pedacitos de lo que siento por vos</h2>
+    <p class="indicacion">Toca cada foto para abrir su carta.</p>
+    <div id="galeria" class="galeria"></div>
+    <p class="contador" aria-live="polite"><span id="cuenta">0</span> de 8 recuerdos descubiertos</p>
+
+    <div id="sorpresa" class="sorpresa" hidden>
+      <p>Ya los abriste todos. Ahora sabes que cada foto guarda una razón distinta para sonreír.</p>
+      <button id="repetir" class="boton secundario">Volver a recorrer los recuerdos</button>
+    </div>
+  </section>
+
+  <section class="final">
+    <h2>Y si algo quiero que recuerdes…</h2>
+    <p>Esta es una forma de mostrarte , sin prisas y sin adornos de más, cuánto significas para mí. Detrás de cada fotografía hay una razón para sonreír.</p>
+    <p class="frase">Gracias por ser mi lugar seguro.</p>
+    <svg class="latido pequeno" aria-hidden="true"><use href="#h"/></svg>
+  </section>
+
+  <button id="musica" class="musica" aria-pressed="false" aria-label="Activar música" hidden>♪</button>
+  <audio id="audio" src="audio/musica.mp3" loop preload="metadata"></audio>
+</main>
+
+<!-- CARTA (MODAL) -->
+<div id="modal" class="modal" hidden>
+  <div class="velo" data-cerrar></div>
+  <div class="sobre" role="dialog" aria-modal="true" aria-labelledby="m-titulo">
+    <div class="solapa" aria-hidden="true"></div>
+    <article class="carta">
+      <div id="m-foto" class="m-foto"><img id="m-img" alt=""></div>
+      <h3 id="m-titulo"></h3>
+      <p id="m-texto"></p>
+      <svg class="latido pequeno" aria-hidden="true"><use href="#h"/></svg>
+      <button id="cerrar" class="boton secundario" data-cerrar>Volver a los recuerdos</button>
+    </article>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
